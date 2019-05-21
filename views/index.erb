@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Giphy API</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <h2 class="title word">Giphy API</h2>
+
+  <form class="search-form" action="/search" method="POST">
+    <input type="text" name="keyword" placeholder="Search" class="search-text">
+    <button type="submit" class="search-button">
+      <img src="search.png" class="search-icon">
+    </button>
+  </form>
+
+  <% if request.path_info == '/search' %>
+    <h2 class="keyword word"><%= @keyword %></h2>
+    <div>
+      <% @gif_urls.each do |url| %>
+        <img src="<%= url %>">
+      <% end %>
+    </div>
+  <%end%>
+
+</body>
+</html>
