@@ -21,6 +21,10 @@ body {
   font-size: 30px;
 }
 
+.references{
+  font-size: 10px;
+}
+
 /* Fabio Ottavianiさんの作品参考: https://codepen.io/supah/pen/XdKMJK/ */
 
 .search-form {

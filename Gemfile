@@ -7,18 +7,22 @@ gem 'debase'
 gem 'rcodetools'
 gem 'fastri'
 
-gem 'rake'
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem "activerecord", "< 5.0.0"
+
+gem 'rake'
 gem 'sinatra-activerecord'
+gem 'bcrypt'
+
+gem 'sinatra-contrib'
+gem 'cloudinary'
+gem 'json'
+gem 'dotenv'
+
 group :development do
-  gem 'sqlite3'
+  gem 'sqlite3','~> 1.3.6'
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg' , '~> 0.18'
 end
-
-gem 'json'
-gem 'dotenv'

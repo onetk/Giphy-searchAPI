@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Giphy API</title>
+  <title>Test Giphy API</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -16,11 +16,12 @@
     </button>
   </form>
 
-  <% if request.path_info == '/search' %>
-    <h2 class="keyword word"><%= @keyword %></h2>
+  <% #if request.path_info == '/search' %>
+  <% if !@gif_urls.nil? %>
+    <h2 class="keyword word"><%= @keyword %>  <span style="font-size:12px;"> Powered By GIPHY</span></h2>
     <div>
-      <% @gif_urls.each do |url| %>
-        <img src="<%= url %>">
+      <% @gif_urls.each do |item| %>
+        <img src="<%= item["gif_url"] %>">
       <% end %>
     </div>
   <%end%>
